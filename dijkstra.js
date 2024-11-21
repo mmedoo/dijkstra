@@ -1,4 +1,6 @@
 //Dijkstra's algorithm solver
+//By Mostafa Dahshan <mdahshan@outlook.com>
+
 for (let form of document.forms) {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -132,11 +134,11 @@ function drawVertex(px, py) {
     vertex.setAttributeNS(null, "fill", vertexColor);
     vertex.setAttributeNS(null, "stroke", vertexBorderColor);
     vertex.style["cursor"] = "pointer";
-
+     
 
     gvertex.appendChild(vertex);
 
-
+    
     vertex.label = String.fromCharCode(nextLabelCode++);
     vertex.labelText = document.createElementNS(svgns, "text");
     vertex.labelText.setAttribute("x", vertex.cx.baseVal.value);
@@ -226,7 +228,7 @@ function setVertexLabel(vertex, label) {
 function delVertex(vertex) {
     while (vertex.edges.length > 0)
         delEdge(vertex.edges[0]);
-
+    
     gvertex.removeChild(vertex.labelText);
     gvertex.removeChild(vertex);
 }
@@ -361,7 +363,7 @@ function dijkstra(source) {
                 }
             }
         }
-
+        
         //interface end
 
     } while (markedVertices.length < vertices.length);
