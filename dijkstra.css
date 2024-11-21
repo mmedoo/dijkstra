@@ -1,30 +1,174 @@
-svg { border: 1px solid #ccc }
+@font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v59/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Google Sans', sans-serif;
+    margin: 0;
+}
 
 
 /* Modal dialog */
 /* Credit: https://www.w3schools.com/howto/howto_css_modals.asp */
 
+#page-cont {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+#control-cont {
+    padding: 0 40px;
+}
+
+#input-cont {
+    display: flex;
+}
+
+.inputLabel {
+    padding: 10px 15px;
+    display: flex;
+    border-radius: 5px;
+    align-items: start;
+    border: 1px solid #ccc;
+    margin: 7px 5px;
+    cursor: pointer;
+
+    &:has(input:checked) {
+        background-color: #f2f2f2;
+        border: 3px solid rgb(0, 117, 255);
+        margin: 5px 3px;
+    }
+
+    &>input {
+        margin-right: 7px;
+        cursor: pointer;
+    }
+
+    &:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+#svg-cont {
+    /* display: none; */
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background: #f0f0f0;
+    border-left: 2px solid #ccc;
+
+    & svg {
+        height: 100%;
+    }
+}
+
+#savesvgbutton {
+    padding: 5px 10px;
+    font: 400 20px 'Google Sans', sans-serif;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.15s;
+
+    &:hover {
+        backdrop-filter: brightness(0.95);
+    }
+}
+
+#usage {
+    max-width: 500px;
+    font-size: larger;
+    line-height: 1.7;
+    padding-inline-start: 22px;
+}
+
+#dijkstraSteps {
+    border-collapse: collapse;
+    border-radius: 3px;
+
+    &>tbody {
+        text-align: center;
+    }
+
+    & td,
+    & th {
+        padding: 5px 15px;
+    }
+
+    & th {
+        background-color: #f2f2f2;
+    }
+
+    & tr:nth-child(even) {
+        background-color: #f5f5f5;
+    }
+}
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 30%;
+    position: relative;
+    border-radius: 10px;
+
+    & span {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+
+    & input {
+        font-size: 25px;
+        padding-left: 8px;
+        max-width: 100%;
+    }
+
+    & button {
+        margin: 20px 0;
+        padding: 5px 10px;
+        font: 400 20px 'Google Sans', sans-serif;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.15s;
+
+        &:hover {
+            backdrop-filter: brightness(0.95);
+        }
+    }
 }
 
 /* The Close Button */
