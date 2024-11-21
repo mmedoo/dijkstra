@@ -22,20 +22,9 @@ body {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 800px) {
-    #page-cont {
-        flex-direction: column;
-    }
-}
 
 #control-cont {
     padding: 0 40px;
-}
-
-@media screen and (max-width: 800px) {
-    #control-cont {
-        width: calc(100% - 80px);
-    }
 }
 
 #input-cont {
@@ -79,14 +68,7 @@ body {
 
     & svg {
         height: 100%;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    #svg-cont {
         width: 100%;
-        height: auto;
-        position: static;
     }
 }
 
@@ -207,4 +189,18 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    #page-cont {
+        flex-direction: column;
+    }
+    #control-cont {
+        width: calc(100% - 80px);
+    }
+    #svg-cont {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
 }
