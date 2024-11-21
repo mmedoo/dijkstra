@@ -114,7 +114,7 @@ body {
 
 #dijkstraSteps {
     border-collapse: collapse;
-    border-radius: 3px;
+    font-size: larger;
 
     &>tbody {
         text-align: center;
